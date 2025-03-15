@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pay Now</title>
+    <link rel="stylesheet" href="\static\css\pay.css">
+</head>
+<body>
+    <div class="pay-now-container">
+        <div class="pay-now-card">
+            <h1>Confirm Payment</h1>
+            <p>Your total fees are due. Do you want to proceed with the payment?</p>
+
+            <!-- Action Buttons -->
+            <div class="pay-now-buttons">
+                <form method="POST" action="{% url 'pay' %}">
+                    {% csrf_token %}
+                    <button type="submit" class="yes-btn">Yes</button>
+                </form>
+                <a href="{% url 'student_dashboard' %}" class="no-btn">No</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

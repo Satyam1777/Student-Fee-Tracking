@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login</title>
+    <link rel="stylesheet" href="/static\css\studentloginpage.css">
+</head>
+<body>
+    <!-- Back to Home Button -->
+    <a href="/" class="back-btn">← Back to Home</a>
+
+    <!-- Login Container -->
+    <div class="login-container">
+        <div class="login-box">
+            <h1 class="login-title">Student Login</h1>
+            <form  action="{% url 'student_login' %}"  method="POST">
+                {% csrf_token %}
+                <div class="input-group">
+                    <label for="student-id">Student ID</label>
+                    <input type="text" id="student-id" name="student_id" placeholder="Enter your student ID" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="btn login-btn">Login</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

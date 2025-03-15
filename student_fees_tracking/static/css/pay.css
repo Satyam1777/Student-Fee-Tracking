@@ -1,0 +1,77 @@
+/* Pay Now Dashboard Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #007bff, #00c6ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+}
+
+.pay-now-container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.pay-now-card {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    color: #333;
+}
+
+.pay-now-card h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.pay-now-card p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.pay-now-buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.yes-btn,
+.no-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+.yes-btn {
+    background: #28a745;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.yes-btn:hover {
+    background: #218838;
+}
+
+.no-btn {
+    background: #dc3545;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.no-btn:hover {
+    background: #c82333;
+}

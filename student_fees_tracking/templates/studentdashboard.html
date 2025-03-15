@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="\static\css\studentdashboard.css">
+    <style>
+        .section {
+            display: none; /* Hide all sections initially */
+        }
+        .section.active {
+            display: block; /* Show the active section */
+        }
+    </style>
+</head>
+<body>
+    <!-- Dashboard Container -->
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="header-title">
+                <h1>Welcome, {{ student_name }} </h1>
+            </div>
+            <div class="header-actions">
+                <a href="/" class="logout-btn">Logout</a>
+            </div>
+        </header>
+
+        <!-- Sidebar Navigation -->
+        <nav class="dashboard-sidebar">
+            <ul>
+                <li><a href="#view-profile" onclick="showSection('view-profile')">View Profile</a></li>
+                <li><a href="#view-fees" onclick="showSection('view-fees')">View Fees</a></li>
+                <li><a href="#settings" onclick="showSection('settings')">Settings</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="dashboard-main">
+            <!-- View Profile Section -->
+            <section id="view-profile" class="section">
+                <h2>Your Profile</h2>
+                <p><strong>Name:</strong> {{ student_name }}</p>
+                <p><strong>Email:</strong> {{ student_email }}</p>
+            </section>
+
+            <!-- View Fees Section -->
+            <section id="view-fees" class="section">
+                <h2>Fees Details</h2>
+                <p><strong>Status:</strong> {{ fees_status }}</p>
+            
+ <!-- Pay Now Button -->
+                 {% if show_pay_button %}
+                    <form method="POST" action="{% url 'pay' %}">
+                        {% csrf_token %}
+                        <button type="submit" class="pay-now-btn">Pay Now</button>
+                    </form>
+                {% endif %} 
+            </section>
+
+
+
+
+
+
+
+
+
+            <!-- Settings Section -->
+            <section id="settings" class="section">
+                <h2>Settings</h2>
+                <p>Update your account details here.</p>
+            </section>
+        </main>
+    </div>
+
+
+
+ 
+
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.remove('active'));
+
+            // Show the selected section
+            const activeSection = document.getElementById(sectionId);
+            if (activeSection) {
+                activeSection.classList.add('active');
+            }
+        }
+
+        // Show the "View Profile" section by default on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            showSection('view-profile');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Signup</title>
+    <link rel="stylesheet" href="\static\css\signup.css">
+</head>
+<body>
+    <!-- Back to Home Button -->
+    <a href="/" class="back-btn">← Back to Home</a>
+
+    <!-- Signup Container -->
+    <div class="signup-container">
+        <div class="signup-box">
+            <h1 class="signup-title">Student Signup</h1>
+            <form action="{% url 'signup' %}" method="POST">
+                {% csrf_token %}
+                <div class="input-group">
+                    <label for="student-id">Student ID</label>
+                    <input type="text" id="student-id" name="student_id" placeholder="Enter your Student ID" required>
+                </div>
+                <div class="input-group">
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" name="first_name" placeholder="Enter your First Name" required>
+                </div>
+                <div class="input-group">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" name="last_name" placeholder="Enter your Last Name" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your Email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Create a Password" required>
+                </div>
+                <div class="input-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm_password" placeholder="Confirm your Password" required>
+                </div>
+                <button type="submit" class="btn signup-btn">Sign Up</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

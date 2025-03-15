@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="\static\css\adminlogin.css">
+</head>
+<body>
+    <!-- Back to Home Button -->
+    <a href="/" class="back-btn">← Back to Home</a>
+
+    <!-- Admin Login Container -->
+    <div class="login-container">
+        <div class="login-box">
+            <h1 class="login-title">Admin Login</h1>
+            <form action="{% url 'admin_login' %}" method="POST">
+                {% csrf_token %}
+                <div class="input-group">
+                    <label for="admin-id">Admin ID</label>
+                    <input type="text" id="admin-id" name="admin_id" placeholder="Enter your Admin ID" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your Password" required>
+                </div>
+                <button type="submit" class="btn login-btn">Login</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
